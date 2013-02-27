@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:Library>
+    <ns:Sections>
+        <ns:History>
+             <ns:Book>
+                 <ns:Author>
+                     Arnie
+                 </ns:Author>
+                 <ns:Title>
+                     History Book
+                 </ns:Title>
+             </ns:Book>
+        </ns:History>
+        <ns:Arts>
+            <ns:Book>
+                <ns:Author>
+                    Cath
+                </ns:Author>
+                <ns:Title>
+                    Arty Book
+                </ns:Title>
+            </ns:Book>
+        </ns:Arts>
+        <ns:Science>
+            <ns:Book>
+                <ns:Author>
+                    Cathy
+                </ns:Author>
+                <ns:Title>
+                    Genes and Stuff
+                </ns:Title>
+            </ns:Book>
+        </ns:Science>
+    </ns:Sections>
+</ns:Library>
