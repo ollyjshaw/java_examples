@@ -1,5 +1,6 @@
-package java_examples_parent.xml.parsing;
+package java_examples_parent.xml.parsing.documentbuilder;
 
+import java_examples_parent.xml.parsing.pojos.Book;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;

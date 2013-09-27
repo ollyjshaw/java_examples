@@ -1,4 +1,4 @@
-package java_examples_parent.xml.parsing;
+package java_examples_parent.xml.parsing.pojos;
 
 /**
  * Simple Book object

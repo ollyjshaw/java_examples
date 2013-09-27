@@ -1,7 +1,7 @@
-package java_examples_parent;
+package java_examples_parent.xml.parsing.documentbuilder;
 
 
-import java_examples_parent.xml.parsing.Book;
+import java_examples_parent.xml.parsing.pojos.Book;
 import org.junit.Before;
 import org.junit.Test;
 import org.xml.sax.SAXException;
@@ -31,14 +31,14 @@ public class SimpleDocumentBuilderParserTest {
 
     @Test
     public void testAllBooksReturned() throws Exception {
-        List<Book> books = new java_examples_parent.xml.parsing.SimpleDocumentBuilderParser().extractAllBooks(exampleFile);
+        List<Book> books = new SimpleDocumentBuilderParser().extractAllBooks(exampleFile);
         assertNotNull(books);
         assertEquals(3, books.size());
     }
 
     @Test
     public void testContentOfFirstBook() throws ParserConfigurationException, SAXException, IOException {
-        List<Book> books = new java_examples_parent.xml.parsing.SimpleDocumentBuilderParser().extractAllBooks(exampleFile);
+        List<Book> books = new SimpleDocumentBuilderParser().extractAllBooks(exampleFile);
         Book firstBook = books.get(0);
         assertNotNull(firstBook);
         assertNotNull(firstBook.getAuthor());
