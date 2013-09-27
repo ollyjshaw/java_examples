@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ns:Library>
+<ns:Library xmlns:ns="http://www.example.com">
     <ns:Sections>
         <ns:History>
-             <ns:Book>
-                 <ns:Author>
-                     Arnie
-                 </ns:Author>
-                 <ns:Title>
-                     History Book
-                 </ns:Title>
-             </ns:Book>
+            <ns:Book>
+                <ns:Author>
+                    Arnie
+                </ns:Author>
+                <ns:Title>
+                    History Book
+                </ns:Title>
+            </ns:Book>
         </ns:History>
         <ns:Arts>
             <ns:Book>

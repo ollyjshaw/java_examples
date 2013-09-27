@@ -1,4 +1,4 @@
-package java_examples_parent;
+package java_examples_parent.xml.parsing;
 
 /**
  * Simple Book object
@@ -10,5 +10,13 @@ public class Book {
     public Book(String author, String title) {
         Author = author;
         Title = title;
+    }
+
+    public String getTitle() {
+        return Title;
+    }
+
+    public String getAuthor() {
+        return Author;
     }
 }
