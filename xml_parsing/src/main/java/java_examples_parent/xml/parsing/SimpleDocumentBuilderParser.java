@@ -13,11 +13,11 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SimpleLibraryParser {
+public class SimpleDocumentBuilderParser {
     public static final String EXAMPLE_NAMESPACE = "http://www.example.com";
     private final DocumentBuilderFactory dbf;
 
-    public SimpleLibraryParser() {
+    public SimpleDocumentBuilderParser() {
         this.dbf = DocumentBuilderFactory.newInstance();
         this.dbf.setNamespaceAware(true);
     }
@@ -27,6 +27,12 @@ public class SimpleLibraryParser {
         document = parseXmlFile(exampleFile);
         List<Book> books = extractBooks(document);
         return books;
+    }
+
+    private Document parseXmlFile(File exampleFile) throws ParserConfigurationException, IOException, SAXException {
+        DocumentBuilder builder = dbf.newDocumentBuilder();
+        Document document = builder.parse(exampleFile);
+        return document;
     }
 
     private List<Book> extractBooks(Document document) {
@@ -67,11 +73,5 @@ public class SimpleLibraryParser {
 
         return value;
 
-    }
-
-    private Document parseXmlFile(File exampleFile) throws ParserConfigurationException, IOException, SAXException {
-        DocumentBuilder builder = dbf.newDocumentBuilder();
-        Document document = builder.parse(exampleFile);
-        return document;
     }
 }

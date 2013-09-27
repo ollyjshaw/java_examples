@@ -2,7 +2,6 @@ package java_examples_parent;
 
 
 import java_examples_parent.xml.parsing.Book;
-import java_examples_parent.xml.parsing.SimpleLibraryParser;
 import org.junit.Before;
 import org.junit.Test;
 import org.xml.sax.SAXException;
@@ -19,7 +18,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Test the parsing code
  */
-public class SimpleLibraryParserTest {
+public class SimpleDocumentBuilderParserTest {
     private File exampleFile;
 
     @Before
@@ -32,14 +31,14 @@ public class SimpleLibraryParserTest {
 
     @Test
     public void testAllBooksReturned() throws Exception {
-        List<Book> books = new SimpleLibraryParser().extractAllBooks(exampleFile);
+        List<Book> books = new java_examples_parent.xml.parsing.SimpleDocumentBuilderParser().extractAllBooks(exampleFile);
         assertNotNull(books);
         assertEquals(3, books.size());
     }
 
     @Test
     public void testContentOfFirstBook() throws ParserConfigurationException, SAXException, IOException {
-        List<Book> books = new SimpleLibraryParser().extractAllBooks(exampleFile);
+        List<Book> books = new java_examples_parent.xml.parsing.SimpleDocumentBuilderParser().extractAllBooks(exampleFile);
         Book firstBook = books.get(0);
         assertNotNull(firstBook);
         assertNotNull(firstBook.getAuthor());
