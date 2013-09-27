@@ -39,13 +39,11 @@ public class SimpleDocumentBuilderParser {
         List<Book> books = new LinkedList<Book>();
         Element rootElement = document.getDocumentElement();
         NodeList nodeList = rootElement.getElementsByTagNameNS(EXAMPLE_NAMESPACE, "Book");
-        if (nodeList != null && nodeList.getLength() > 0) {
+        if (thereAreNodes(nodeList)) {
             for (int ii = 0; ii < nodeList.getLength(); ii++) {
 
                 Element element = (Element) nodeList.item(ii);
-
                 Book book = getBook(element);
-
                 books.add(book);
             }
         }
@@ -64,7 +62,7 @@ public class SimpleDocumentBuilderParser {
     private String getTextValue(Element element, String tagName) {
         String value = null;
         NodeList nodeList = element.getElementsByTagNameNS(EXAMPLE_NAMESPACE, tagName);
-        if (nodeList != null && nodeList.getLength() > 0) {
+        if (thereAreNodes(nodeList)) {
             Element el = (Element) nodeList.item(0);
             value = el.getFirstChild().getNodeValue();
         }
@@ -73,5 +71,9 @@ public class SimpleDocumentBuilderParser {
 
         return value;
 
+    }
+
+    private boolean thereAreNodes(NodeList nodeList) {
+        return nodeList != null && nodeList.getLength() > 0;
     }
 }
