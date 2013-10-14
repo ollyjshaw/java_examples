@@ -1,8 +1,17 @@
+#Standard Java stuff
+*.class
+
+#maven targets
+target/
+
+#Mac things
+*.DS_Store
+*.DS_Store?
+
+# Intellij
 .idea/
 *.iml
-
-
-*.class
+*.iws
 
 # Package Files #
 *.jar
