@@ -1,5 +1,6 @@
 package java_examples_parent.xml.parsing.documentbuilder;
 
+import java_examples_parent.xml.parsing.LibraryParser;
 import java_examples_parent.xml.parsing.pojos.Book;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -14,11 +15,11 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SimpleDocumentBuilderParser {
+public class DocumentBuilderLibraryParser implements LibraryParser {
     public static final String EXAMPLE_NAMESPACE = "http://www.example.com";
     private final DocumentBuilderFactory dbf;
 
-    public SimpleDocumentBuilderParser() {
+    public DocumentBuilderLibraryParser() {
         this.dbf = DocumentBuilderFactory.newInstance();
         this.dbf.setNamespaceAware(true);
     }

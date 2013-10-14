@@ -1,6 +1,6 @@
-package java_examples_parent.xml.parsing.documentbuilder;
+package java_examples_parent.xml.parsing;
 
-
+import java_examples_parent.xml.parsing.documentbuilder.DocumentBuilderLibraryParser;
 import java_examples_parent.xml.parsing.pojos.Book;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,11 +15,8 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-/**
- * Test the parsing code
- */
-public class SimpleDocumentBuilderParserTest {
-    private File exampleFile;
+public abstract class AbstractLibraryTest {
+    protected File exampleFile;
 
     @Before
     public void setUp() throws Exception {
@@ -27,18 +24,21 @@ public class SimpleDocumentBuilderParserTest {
         URL url = this.getClass().getClassLoader().getResource("library.xml");
         exampleFile = new File(url.getFile());
         assertNotNull(exampleFile);
+
     }
+
+    public abstract List<Book> parseBooks(File file) throws Exception;
 
     @Test
     public void testAllBooksReturned() throws Exception {
-        List<Book> books = new SimpleDocumentBuilderParser().extractAllBooks(exampleFile);
+        List<Book> books = new DocumentBuilderLibraryParser().extractAllBooks(exampleFile);
         assertNotNull(books);
         assertEquals(3, books.size());
     }
 
     @Test
     public void testContentOfFirstBook() throws ParserConfigurationException, SAXException, IOException {
-        List<Book> books = new SimpleDocumentBuilderParser().extractAllBooks(exampleFile);
+        List<Book> books = new DocumentBuilderLibraryParser().extractAllBooks(exampleFile);
         Book firstBook = books.get(0);
         assertNotNull(firstBook);
         assertNotNull(firstBook.getAuthor());
@@ -46,5 +46,4 @@ public class SimpleDocumentBuilderParserTest {
         assertNotNull(firstBook.getTitle());
         assertEquals("History Book", firstBook.getTitle());
     }
-
 }
